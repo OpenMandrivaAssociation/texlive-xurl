@@ -1,6 +1,6 @@
 Name:		texlive-xurl
 Version:	61553
-Release:	1
+Release:	2
 Summary:	Allow URL breaks at any alphanumerical character
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/xurl
