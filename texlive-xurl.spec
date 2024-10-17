@@ -3,7 +3,7 @@ Version:	61553
 Release:	2
 Summary:	Allow URL breaks at any alphanumerical character
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/xurl
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/xurl
 License:	lppl1.3
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/xurl.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/xurl.doc.r%{version}.tar.xz
