@@ -1,39 +1,23 @@
-Name:		texlive-xurl
-Version:	61553
-Release:	2
+%global tl_name xurl
+%global tl_revision 77682
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	0.10
+Release:	%{tl_revision}.1
 Summary:	Allow URL breaks at any alphanumerical character
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/xurl
 License:	lppl1.3
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/xurl.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/xurl.doc.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/xurl.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/xurl.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-This package loads url by default and defines possible URL
-breaks for all alphanumerical characters, as well as = / . : *
-- ~ ' " All arguments which are valid for url can be used and
-will be passed on to this package. For more information read
-the documentation of url itself.
+This package loads url by default and defines possible URL breaks for
+all alphanumerical characters, as well as = / . : * - ~ ' " All
+arguments which are valid for url can be used and will be passed on to
+this package. For more information read the documentation of url itself.
 
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%{_texmfdistdir}/tex/latex/xurl
-%doc %{_texmfdistdir}/doc/latex/xurl
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
